@@ -4,7 +4,6 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const BUILD_DIR = path.join(__dirname, 'dist');
 const APP_DIR = path.join(__dirname, 'src');
 
 const VENDOR_LIBS = [
