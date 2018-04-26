@@ -1,0 +1,40 @@
+{
+  "name": "tripforbusiness_client",
+  "version": "0.1.0",
+  "main": "entry.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --watch",
+    "build": "webpack --mode development",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "bundle-loader": "^0.5.6",
+    "express": "^4.16.3",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-loadable": "^5.3.1",
+    "react-router-dom": "^4.2.2",
+    "webpack-dev-middleware": "^3.1.2",
+    "clean-webpack-plugin": "^0.1.19"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.2.0",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
