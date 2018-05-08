@@ -10,7 +10,7 @@ const VENDOR_LIBS = [
     'react', 'react-dom', 'react-router-dom'
 ];
 
-let config =  {
+let config = {
     entry: {
         bundle: APP_DIR + '/entry.js',
         vendor: VENDOR_LIBS
