@@ -15,8 +15,8 @@ class LoginForm extends React.Component {
         errors: {}
     };
 
-    onChange = e => this.setState({
-        data: {...this.state.data, [e.target.name]: e.target.value}
+    onChange = event => this.setState({
+        data: {...this.state.data, [event.target.name]: event.target.value}
     });
 
     onSubmit = () => {
