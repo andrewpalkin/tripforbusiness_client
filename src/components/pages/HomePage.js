@@ -1,11 +1,21 @@
-import React from "react";
+import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import Constants from "../../constants/Constants"
 
-const HomePage = () => (
-    <div>
-        <h1>Home Page</h1>
-        <Link to="/login">Login</Link>
-    </div>
-);
+class HomePage extends Component {
+    render() {
+        gtag('config', Constants.GA_TRACKING_ID, {
+            'page_title' : 'Home Page',
+            'page_path': '/'
+        });
+
+        return (
+            <div>
+                <h1>Home Page</h1>
+                <Link to="/login">Login</Link>
+            </div>
+        )
+    }
+}
 
 export default HomePage;
