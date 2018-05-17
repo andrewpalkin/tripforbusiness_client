@@ -42,6 +42,8 @@ class LoginForm extends React.Component {
     render() {
         const {data, errors} = this.state;
 
+        gtag('event', 'login', { method : 'LoginForm' });
+
         return (
             <Form onSubmit={this.onSubmit}>
                 <Form.Field error={!!errors.email} required>
