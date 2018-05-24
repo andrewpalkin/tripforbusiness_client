@@ -13,6 +13,6 @@ export default {
                 email: credentials.email,
                 pass: credentials.password
             }
-        }).then(res => res.data.user)
+        }).then(res => res.data)
     }
 }

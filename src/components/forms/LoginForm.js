@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Form} from "semantic-ui-react";
+import {Button, Form, Message} from "semantic-ui-react";
 import PropTypes from "prop-types";
 import validator from "validator";
 import InlineError from "../messages/InlineError";
@@ -12,7 +12,8 @@ class LoginForm extends React.Component {
             password: ''
         },
         loading: false,
-        errors: {}
+        errors: {},
+        apiResponseError: ''
     };
 
     onChange = event => this.setState({
@@ -26,7 +27,15 @@ class LoginForm extends React.Component {
         this.setState({errors});
 
         if (Object.keys(errors).length === 0) {
-            this.props.submit(data);
+            this.setState({loading: true});
+            this.props
+                .submit(data)
+                .catch(error => {
+                    if (error.response) {
+                        this.setState({apiResponseError: error.response.data.message});
+                    }
+                    this.setState({loading: false});
+                });
         }
     };
 
@@ -40,12 +49,18 @@ class LoginForm extends React.Component {
     };
 
     render() {
-        const {data, errors} = this.state;
+        const {data, errors, loading, apiResponseError} = this.state;
 
-        gtag('event', 'login', { method : 'LoginForm' });
+        gtag('event', 'login', {method: 'LoginForm'});
 
         return (
-            <Form onSubmit={this.onSubmit}>
+            <Form onSubmit={this.onSubmit} loading={loading}>
+                {apiResponseError && (
+                    <Message negative>
+                        <Message.Header>Something went wrong</Message.Header>
+                        <p>{apiResponseError}</p>
+                    </Message>
+                )}
                 <Form.Field error={!!errors.email} required>
                     <label htmlFor="email">Email</label>
                     <input type="email"
