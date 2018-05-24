@@ -1,11 +1,9 @@
 import axios from 'axios';
+import Constants from "../constants/Constants"
 
 const instance = axios.create({
-    baseURL: 'http://andrewp01:3000',
-    timeout: 1000,
-    headers: { 'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, HEAD',
-        'Access-Control-Request-Headers': 'Content-Type'}
+    baseURL: Constants.BASE_URL,
+    timeout: 1000
 });
 
 export default {

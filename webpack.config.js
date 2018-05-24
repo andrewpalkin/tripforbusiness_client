@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const APP_DIR = path.join(__dirname, 'src');
 
 const VENDOR_LIBS = [
-    'react', 'react-dom', 'react-router-dom'
+    'react', 'react-dom', 'react-router-dom', 'axios', 'react-redux', 'redux', 'redux-thunk'
 ];
 
 let config = {
